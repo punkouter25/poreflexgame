@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://2etv3u30swis"]
+
+[ext_resource type="Script" path="res://scenes/main/Main.cs" id="1_4g3m5"]
+[ext_resource type="PackedScene" uid="uid://c8j6kuy4hm4xt" path="res://scenes/splash/splash_screen.tscn" id="2_yvt8p"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_4g3m5")
+
+[node name="CurrentScene" type="Node" parent="."]
+
+[node name="SplashScreen" parent="CurrentScene" instance=ExtResource("2_yvt8p")]
