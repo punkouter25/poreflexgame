@@ -85,7 +85,7 @@ public partial class GameOverScreen : Control
 
     private void ChangeScene(string scenePath)
     {
-        var main = GetTree().GetRoot().GetNode<Main>("Main");
+        var main = GetTree().GetRoot().GetNodeOrNull<Main>("Main");
         if (main != null)
         {
             GD.Print($"Changing scene to: {scenePath}");
@@ -102,4 +102,4 @@ public partial class GameOverScreen : Control
             }
         }
     }
-} 
+}

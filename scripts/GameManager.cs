@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Linq;
+using System.IO; // Added for file deletion
 
 public partial class GameManager : Node
 {
@@ -99,11 +100,12 @@ public partial class GameManager : Node
         _bestTime = float.MaxValue;
         
         // Delete the save file if it exists
-        if (FileAccess.FileExists(SAVE_PATH))
+        string absoluteSavePath = Path.Combine(OS.GetUserDataDir(), "player_data.tres");
+        if (File.Exists(absoluteSavePath))
         {
-            DirAccess.RemoveAbsolute(SAVE_PATH);
+            File.Delete(absoluteSavePath);
         }
         
         GD.Print("Player data reset successfully");
     }
-} 
+}
