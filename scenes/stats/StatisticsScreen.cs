@@ -12,10 +12,29 @@ public partial class StatisticsScreen : Control
     private Label _totalGamesLabel;
     private Graph _graph;
     private Button _backButton;
+    private Main _mainNode;
 
     public override void _Ready()
     {
         GD.Print("Statistics screen initialized");
+
+        // Get the Main node from the root
+        var root = GetTree().Root;
+        foreach (var child in root.GetChildren())
+        {
+            if (child is Main mainNode)
+            {
+                _mainNode = mainNode;
+                GD.Print("Found Main node in root children");
+                break;
+            }
+        }
+        
+        if (_mainNode == null)
+        {
+            GD.PushWarning("Could not find Main node during initialization");
+            PrintSceneTree(GetTree().Root, 0);  // Print scene tree for debugging
+        }
 
         // Get node references
         _gameManager = GetNode<GameManager>("/root/GameManager");
@@ -70,15 +89,32 @@ public partial class StatisticsScreen : Control
     private void OnBackPressed()
     {
         GD.Print("Returning to main menu");
-        var main = GetTree().GetRoot().GetNode<Main>("Main");
-        if (main != null)
+        
+        // Try to find Main node again if we don't have it
+        if (_mainNode == null)
         {
-            main.ChangeScene(MAIN_MENU_SCENE);
+            var root = GetTree().Root;
+            foreach (var child in root.GetChildren())
+            {
+                if (child is Main mainNode)
+                {
+                    _mainNode = mainNode;
+                    GD.Print("Found Main node before scene change");
+                    break;
+                }
+            }
+        }
+
+        if (_mainNode != null)
+        {
+            GD.Print($"Changing scene to: {MAIN_MENU_SCENE} through Main node");
+            _mainNode.ChangeScene(MAIN_MENU_SCENE);
         }
         else
         {
-            GD.PushError("Could not find Main node");
-            // Fallback to direct scene change if Main node is not found
+            GD.PushError("Could not find Main node, falling back to direct scene change");
+            GD.Print("Current scene tree structure:");
+            PrintSceneTree(GetTree().Root, 0);
             Error error = GetTree().ChangeSceneToFile(MAIN_MENU_SCENE);
             if (error != Error.Ok)
             {
@@ -86,4 +122,14 @@ public partial class StatisticsScreen : Control
             }
         }
     }
-} 
+
+    private void PrintSceneTree(Node node, int level)
+    {
+        var indent = new string(' ', level * 2);
+        GD.Print($"{indent}{node.Name} ({node.GetType()})");
+        foreach (Node child in node.GetChildren())
+        {
+            PrintSceneTree(child, level + 1);
+        }
+    }
+}

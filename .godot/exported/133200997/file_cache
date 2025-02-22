@@ -1,0 +1,9 @@
+res://scenes/game/game_over_screen.tscn::1d8c88485d72f8b7f029102da14fbebc::1740245968::res://.godot/exported/133200997/export-97e97c2e9e05708a06182064ed0ad403-game_over_screen.scn
+res://scenes/game/game_screen.tscn::501df6c877c9c21b113fa3fad3465d83::1740245968::res://.godot/exported/133200997/export-5992233706b3c04a760d9407c9426efe-game_screen.scn
+res://scenes/leaderboard/leaderboard_screen.tscn::4016eea40a4b8bf82bb9994ac70051d3::1740245968::res://.godot/exported/133200997/export-08c20b3f0f4543169c5588e61209c0d2-leaderboard_screen.scn
+res://scenes/main/main.tscn::0962f842b3d153ee618f4a74dc2a1bc4::1740250559::res://.godot/exported/133200997/export-f39996a6d27a38698d16421ab974097b-main.scn
+res://scenes/menu/main_menu.tscn::e7e4e98733ab9ced60e9743784f8256e::1740245968::res://.godot/exported/133200997/export-9ae7820dfc5b492c0424e6a9127ac776-main_menu.scn
+res://scenes/registration/player_registration.tscn::05b9c4625cc5d9e413451a9b60c4b7bd::1740245968::res://.godot/exported/133200997/export-072197c7bee136a9e4a326eac15f5ab6-player_registration.scn
+res://scenes/splash/splash_screen.tscn::c0b20d3bdda70795c80b5cedcbff23d5::1740245968::res://.godot/exported/133200997/export-2c49ada72d015f26a0cbd32d7c813117-splash_screen.scn
+res://scenes/stats/statistics_screen.tscn::4173c456b4d31d93b6e537c43dbbaed5::1740245968::res://.godot/exported/133200997/export-67828fc7aa8ec0579886f70bbc79927b-statistics_screen.scn
+res://theme/game_theme.tres::65b265357ef0a1bcd6f53416925a644e::1740249033::res://.godot/exported/133200997/export-546dfbfbe014cb3aa94699a286e462bc-game_theme.res

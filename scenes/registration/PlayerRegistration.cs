@@ -10,26 +10,35 @@ public partial class PlayerRegistration : Control
     private LineEdit _initialsInput;
     private Button _continueButton;
     private Label _errorLabel;
-    private Main _main;
+    private Main _mainNode;
 
     public override void _Ready()
     {
         GD.Print("Player registration initialized");
+
+        // Get the Main node from the root
+        var root = GetTree().Root;
+        foreach (var child in root.GetChildren())
+        {
+            if (child is Main mainNode)
+            {
+                _mainNode = mainNode;
+                GD.Print("Found Main node in root children");
+                break;
+            }
+        }
+        
+        if (_mainNode == null)
+        {
+            GD.PushWarning("Could not find Main node during initialization");
+            PrintSceneTree(GetTree().Root, 0);  // Print scene tree for debugging
+        }
 
         // Get node references
         _gameManager = GetNode<GameManager>("/root/GameManager");
         _initialsInput = GetNode<LineEdit>("CenterContainer/VBoxContainer/InitialsInput");
         _continueButton = GetNode<Button>("CenterContainer/VBoxContainer/ContinueButton");
         _errorLabel = GetNode<Label>("CenterContainer/VBoxContainer/ErrorLabel");
-
-        // Get Main node reference
-        Node currentScene = GetParent();
-        _main = currentScene.GetParent<Main>();
-        if (_main == null)
-        {
-            GD.PushError("Could not find Main node");
-            return;
-        }
 
         // Connect signals
         _initialsInput.TextChanged += OnInitialsChanged;
@@ -87,7 +96,46 @@ public partial class PlayerRegistration : Control
         _gameManager.PlayerData.Initials = initials;
         _gameManager.SavePlayerData();
 
-        // Transition to main menu
-        _main.ChangeScene(MAIN_MENU_SCENE);
+        // Try to find Main node again if we don't have it
+        if (_mainNode == null)
+        {
+            var root = GetTree().Root;
+            foreach (var child in root.GetChildren())
+            {
+                if (child is Main mainNode)
+                {
+                    _mainNode = mainNode;
+                    GD.Print("Found Main node before scene change");
+                    break;
+                }
+            }
+        }
+
+        if (_mainNode != null)
+        {
+            GD.Print($"Changing scene to: {MAIN_MENU_SCENE} through Main node");
+            _mainNode.ChangeScene(MAIN_MENU_SCENE);
+        }
+        else
+        {
+            GD.PushError("Could not find Main node, falling back to direct scene change");
+            GD.Print("Current scene tree structure:");
+            PrintSceneTree(GetTree().Root, 0);
+            Error error = GetTree().ChangeSceneToFile(MAIN_MENU_SCENE);
+            if (error != Error.Ok)
+            {
+                GD.PushError($"Failed to change scene. Error code: {error}");
+            }
+        }
     }
-} 
+
+    private void PrintSceneTree(Node node, int level)
+    {
+        var indent = new string(' ', level * 2);
+        GD.Print($"{indent}{node.Name} ({node.GetType()})");
+        foreach (Node child in node.GetChildren())
+        {
+            PrintSceneTree(child, level + 1);
+        }
+    }
+}

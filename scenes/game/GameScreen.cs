@@ -19,6 +19,7 @@ public partial class GameScreen : Control
 	private Button _exitButton;
 	private Control _barsContainer;
 	private AcceptDialog _penaltyDialog;
+	private Main _mainNode;
 
 	private int _currentBarIndex = 0;
 	private ColorRect _currentBar;
@@ -53,6 +54,24 @@ public partial class GameScreen : Control
 		// Connect signals
 		_stopButton.Pressed += OnStopPressed;
 		_exitButton.Pressed += OnExitPressed;
+
+		 // Get the Main node from the root
+        var root = GetTree().Root;
+        foreach (var child in root.GetChildren())
+        {
+            if (child is Main mainNode)
+            {
+                _mainNode = mainNode;
+                GD.Print("Found Main node in root children");
+                break;
+            }
+        }
+        
+        if (_mainNode == null)
+        {
+            GD.PushWarning("Could not find Main node during initialization");
+            PrintSceneTree(GetTree().Root, 0);  // Print scene tree for debugging
+        }
 
 		// Initialize first bar
 		SetupCurrentBar();
@@ -182,25 +201,39 @@ public partial class GameScreen : Control
 
 	private void ReturnToMainMenu()
 	{
-		GD.Print("Returning to main menu after penalty");
-		var tree = GetTree();
-		if (tree != null)
-		{
-			tree.CreateTimer(0.1).Timeout += () =>
-			{
-				Error error = tree.ChangeSceneToFile(MAIN_MENU_SCENE);
-				if (error != Error.Ok)
-				{
-					GD.PushError($"Failed to change scene. Error code: {error}");
-					GD.Print($"Failed to change scene. Error code: {error}");
-				}
-			};
-		}
-		else
-		{
-			GD.PushError("Could not get SceneTree");
-			GD.Print("Could not get SceneTree");
-		}
+		GD.Print("Returning to main menu");
+        
+        // Try to find Main node again if we don't have it
+        if (_mainNode == null)
+        {
+            var root = GetTree().Root;
+            foreach (var child in root.GetChildren())
+            {
+                if (child is Main mainNode)
+                {
+                    _mainNode = mainNode;
+                    GD.Print("Found Main node before scene change");
+                    break;
+                }
+            }
+        }
+
+        if (_mainNode != null)
+        {
+            GD.Print($"Changing scene to: {MAIN_MENU_SCENE} through Main node");
+            _mainNode.ChangeScene(MAIN_MENU_SCENE);
+        }
+        else
+        {
+            GD.PushError("Could not find Main node, falling back to direct scene change");
+            GD.Print("Current scene tree structure:");
+            PrintSceneTree(GetTree().Root, 0);
+            Error error = GetTree().ChangeSceneToFile(MAIN_MENU_SCENE);
+            if (error != Error.Ok)
+            {
+                GD.PushError($"Failed to change scene. Error code: {error}");
+            }
+        }
 	}
 
 	private void EndGame()
@@ -208,31 +241,52 @@ public partial class GameScreen : Control
 		GD.Print("Game complete, recording score");
 		_gameManager.RecordGameScore(_recordedTimes.ToArray());
 
-		// Use direct scene transition
-		var tree = GetTree();
-		if (tree != null)
-		{
-			GD.Print("Transitioning to game over screen");
-			tree.CreateTimer(0.1).Timeout += () =>
-			{
-				Error error = tree.ChangeSceneToFile(GAME_OVER_SCENE);
-				if (error != Error.Ok)
-				{
-					GD.PushError($"Failed to change scene. Error code: {error}");
-					GD.Print($"Failed to change scene. Error code: {error}");
-				}
-			};
-		}
-		else
-		{
-			GD.PushError("Could not get SceneTree");
-			GD.Print("Could not get SceneTree");
-		}
+		// Try to find Main node again if we don't have it
+        if (_mainNode == null)
+        {
+            var root = GetTree().Root;
+            foreach (var child in root.GetChildren())
+            {
+                if (child is Main mainNode)
+                {
+                    _mainNode = mainNode;
+                    GD.Print("Found Main node before scene change");
+                    break;
+                }
+            }
+        }
+
+        if (_mainNode != null)
+        {
+            GD.Print($"Changing scene to: {GAME_OVER_SCENE} through Main node");
+            _mainNode.ChangeScene(GAME_OVER_SCENE);
+        }
+        else
+        {
+            GD.PushError("Could not find Main node, falling back to direct scene change");
+            GD.Print("Current scene tree structure:");
+            PrintSceneTree(GetTree().Root, 0);
+            Error error = GetTree().ChangeSceneToFile(GAME_OVER_SCENE);
+            if (error != Error.Ok)
+            {
+                GD.PushError($"Failed to change scene. Error code: {error}");
+            }
+        }
 	}
+
+	private void PrintSceneTree(Node node, int level)
+    {
+        var indent = new string(' ', level * 2);
+        GD.Print($"{indent}{node.Name} ({node.GetType()})");
+        foreach (Node child in node.GetChildren())
+        {
+            PrintSceneTree(child, level + 1);
+        }
+    }
 
 	private void OnExitPressed()
 	{
 		GD.Print("Exiting to main menu");
 		ReturnToMainMenu();
 	}
-} 
+}
