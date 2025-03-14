@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d8p4q2yjmx3k7"]
+[gd_scene load_steps=3 format=3 uid="uid://eb8502a2q7tg"]
 
-[ext_resource type="Script" path="res://scenes/stats/StatisticsScreen.cs" id="1_s4k2v"]
-[ext_resource type="Script" path="res://scenes/stats/Graph.cs" id="2_graph"]
+[ext_resource type="Script" uid="uid://iwcji30mqmw" path="res://scenes/stats/StatisticsScreen.cs" id="1_s4k2v"]
+[ext_resource type="Script" uid="uid://b8o7t76ntw8d1" path="res://scenes/stats/Graph.cs" id="2_graph"]
 
 [node name="StatisticsScreen" type="Control"]
 layout_mode = 3

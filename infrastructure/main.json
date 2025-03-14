@@ -1,0 +1,103 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.33.93.31351",
+      "templateHash": "2429661587656799066"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus"
+    },
+    "storageName": {
+      "type": "string",
+      "defaultValue": "poreflexgamestorage"
+    },
+    "maxRetryAttempts": {
+      "type": "int",
+      "defaultValue": 3
+    },
+    "deploymentEnvironment": {
+      "type": "string",
+      "defaultValue": "prod"
+    }
+  },
+  "variables": {
+    "validStorageName": "[replace(toLower(parameters('storageName')), '-', '')]",
+    "sanitizedStorageName": "[if(greater(length(variables('validStorageName')), 24), substring(variables('validStorageName'), 0, 24), variables('validStorageName'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2021-08-01",
+      "name": "[variables('sanitizedStorageName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2",
+      "properties": {
+        "cors": {
+          "corsRules": [
+            {
+              "allowedHeaders": [
+                "*"
+              ],
+              "allowedMethods": [
+                "GET",
+                "POST"
+              ],
+              "allowedOrigins": [
+                "*"
+              ],
+              "exposedHeaders": [
+                "*"
+              ],
+              "maxAgeInSeconds": 3600
+            }
+          ]
+        },
+        "minimumTlsVersion": "TLS1_2",
+        "supportsHttpsTrafficOnly": true,
+        "networkAcls": {
+          "defaultAction": "Allow",
+          "bypass": "AzureServices"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/tableServices",
+      "apiVersion": "2021-08-01",
+      "name": "[format('{0}/{1}', variables('sanitizedStorageName'), 'default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('sanitizedStorageName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/tableServices/tables",
+      "apiVersion": "2021-08-01",
+      "name": "[format('{0}/{1}/{2}', variables('sanitizedStorageName'), 'default', 'highscores')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/tableServices', variables('sanitizedStorageName'), 'default')]"
+      ]
+    }
+  ],
+  "outputs": {
+    "storageAccountName": {
+      "type": "string",
+      "value": "[variables('sanitizedStorageName')]"
+    },
+    "storageAccountId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Storage/storageAccounts', variables('sanitizedStorageName'))]"
+    },
+    "deploymentSuccess": {
+      "type": "bool",
+      "value": true
+    }
+  }
+}

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7mots0ipdd8p"]
 
-[ext_resource type="Script" path="res://scenes/registration/PlayerRegistration.cs" id="1_u4k2v"]
+[ext_resource type="Script" uid="uid://df4t58mecks4y" path="res://scenes/registration/PlayerRegistration.cs" id="1_u4k2v"]
 
 [node name="PlayerRegistration" type="Control"]
 layout_mode = 3

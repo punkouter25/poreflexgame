@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgnsio054uv3l"]
 
-[ext_resource type="Script" path="res://scenes/game/GameScreen.cs" id="1_g4k2v"]
+[ext_resource type="Script" uid="uid://0mmaoot5hm7e" path="res://scenes/game/GameScreen.cs" id="1_g4k2v"]
 
 [node name="GameScreen" type="Control"]
 layout_mode = 3
@@ -82,7 +82,7 @@ alignment = 2
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar1Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "0ms"
+text = ""
 horizontal_alignment = 1
 
 [node name="Bar1" type="ColorRect" parent="BarsContainer/Bar1Container"]
@@ -99,7 +99,7 @@ alignment = 2
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar2Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "0ms"
+text = ""
 horizontal_alignment = 1
 
 [node name="Bar2" type="ColorRect" parent="BarsContainer/Bar2Container"]
@@ -116,7 +116,7 @@ alignment = 2
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar3Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "0ms"
+text = ""
 horizontal_alignment = 1
 
 [node name="Bar3" type="ColorRect" parent="BarsContainer/Bar3Container"]
@@ -133,7 +133,7 @@ alignment = 2
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar4Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "0ms"
+text = ""
 horizontal_alignment = 1
 
 [node name="Bar4" type="ColorRect" parent="BarsContainer/Bar4Container"]
@@ -150,7 +150,7 @@ alignment = 2
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar5Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "0ms"
+text = ""
 horizontal_alignment = 1
 
 [node name="Bar5" type="ColorRect" parent="BarsContainer/Bar5Container"]
@@ -167,7 +167,7 @@ alignment = 2
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar6Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "0ms"
+text = ""
 horizontal_alignment = 1
 
 [node name="Bar6" type="ColorRect" parent="BarsContainer/Bar6Container"]

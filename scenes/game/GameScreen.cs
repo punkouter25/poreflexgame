@@ -103,9 +103,8 @@ public partial class GameScreen : Control
 			_currentBar.CustomMinimumSize = new Vector2(_currentBar.CustomMinimumSize.X, newHeight);
 			_currentBar.Size = new Vector2(_currentBar.Size.X, newHeight);
 
-			// Update time label - now in seconds with 3 decimal places
+			// Update time internally but don't show it
 			float currentTimeSeconds = (Time.GetTicksMsec() - _barStartTime) / 1000.0f;
-			_currentTimeLabel.Text = $"{currentTimeSeconds:F3}s";
 
 			// Check if bar has hit the top or time exceeded
 			if (newHeight >= MAX_BAR_HEIGHT || currentTimeSeconds >= MAX_REACTION_TIME)
@@ -122,7 +121,8 @@ public partial class GameScreen : Control
 		var barContainer = _barsContainer.GetChild(_currentBarIndex);
 		_currentBar = barContainer.GetNode<ColorRect>($"Bar{_currentBarIndex + 1}");
 		_currentTimeLabel = barContainer.GetNode<Label>("TimeLabel");
-		_currentTimeLabel.Text = "0.000s";
+		_currentTimeLabel.Hide(); // Hide the time label initially
+		_currentTimeLabel.Text = ""; // Set empty text instead of "0.000s"
 	}
 
 	private void StartBarMovement()
@@ -167,6 +167,10 @@ public partial class GameScreen : Control
 		_recordedTimes.Add(reactionTime);
 
 		GD.Print($"Bar {_currentBarIndex + 1} time: {reactionTime}");
+
+		 // Show and update the time label
+        _currentTimeLabel.Text = $"{reactionTime:F3}s";
+        _currentTimeLabel.Show();
 
 		// Highlight result
 		_currentBar.Modulate = new Color(1, 1, 0);  // Yellow highlight

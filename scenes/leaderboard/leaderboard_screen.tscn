@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://f8p4q2yjmx3k7"]
+[gd_scene load_steps=2 format=3 uid="uid://ceb8502a2q7tg"]
 
-[ext_resource type="Script" path="res://scenes/leaderboard/LeaderboardScreen.cs" id="1_l4k2v"]
+[ext_resource type="Script" uid="uid://b56kkdjba4j62" path="res://scenes/leaderboard/LeaderboardScreen.cs" id="1_l4k2v"]
 
 [node name="LeaderboardScreen" type="Control"]
 layout_mode = 3
