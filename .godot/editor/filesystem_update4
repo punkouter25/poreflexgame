@@ -1,12 +1,6 @@
-res://scenes/game/game_over_screen.tscn
-res://scenes/game/game_screen.tscn
-res://scenes/leaderboard/leaderboard_screen.tscn
 res://scenes/main/main.tscn
-res://scenes/menu/main_menu.tscn
-res://scenes/registration/player_registration.tscn
-res://scenes/splash/splash_screen.tscn
-res://scenes/stats/statistics_screen.tscn
 res://theme/game_theme.tres
+res://scenes/menu/main_menu.tscn
 res://HighScoreManager.cs
 res://scripts/PlayerData.cs
 res://scenes/menu/MainMenu.cs

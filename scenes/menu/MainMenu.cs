@@ -7,10 +7,8 @@ public partial class MainMenu : Control
 	private const string GAME_SCENE = "res://scenes/game/game_screen.tscn";
 	private const string STATS_SCENE = "res://scenes/stats/statistics_screen.tscn";
 	private const string LEADERBOARD_SCENE = "res://scenes/leaderboard/leaderboard_screen.tscn";
-	private const string REGISTRATION_SCENE = "res://scenes/registration/player_registration.tscn";
 
 	private GameManager _gameManager;
-	private Label _playerInfo;
 	private Button _playButton;
 	private Button _statsButton;
 	private Button _leaderboardButton;
@@ -41,7 +39,6 @@ public partial class MainMenu : Control
 
 		// Get other node references
 		_gameManager = GetNode<GameManager>("/root/GameManager");
-		_playerInfo = GetNode<Label>("PlayerInfo");
 		_playButton = GetNode<Button>("CenterContainer/VBoxContainer/MenuButtons/PlayButton");
 		_statsButton = GetNode<Button>("CenterContainer/VBoxContainer/MenuButtons/StatsButton");
 		_leaderboardButton = GetNode<Button>("CenterContainer/VBoxContainer/MenuButtons/LeaderboardButton");
@@ -58,24 +55,6 @@ public partial class MainMenu : Control
 		// Clear initials on start
 		_initialsInput.Text = "";
 		_gameManager.PlayerData.Initials = "";
-
-		// Display player info
-		UpdatePlayerInfo();
-	}
-
-	private void UpdatePlayerInfo()
-	{
-		var initials = _gameManager.PlayerData.Initials;
-		var bestScore = _gameManager.GetBestScore();
-
-		var infoText = initials;
-		if (bestScore < float.PositiveInfinity)
-		{
-			infoText += $" - Best: {bestScore:F3}";
-		}
-
-		_playerInfo.Text = infoText;
-		GD.Print($"Updated player info: {infoText}");
 	}
 
 	private void OnInitialsChanged(string newText)

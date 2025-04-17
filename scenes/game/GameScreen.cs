@@ -97,11 +97,10 @@ public partial class GameScreen : Control
 			_barPosition += BAR_SPEED * (float)delta * _barDirection;
 
 			// Calculate new height - growing upward from bottom
-			float newHeight = 50.0f * (1.0f + (_barPosition / 50.0f));  // Adjusted scaling factor
+			float newHeight = 50.0f + _barPosition;  // Start at 50 and grow upward
 
-			// Update bar size
-			_currentBar.CustomMinimumSize = new Vector2(_currentBar.CustomMinimumSize.X, newHeight);
-			_currentBar.Size = new Vector2(_currentBar.Size.X, newHeight);
+			// Update bar size - maintain fixed width of 30
+			_currentBar.CustomMinimumSize = new Vector2(30, newHeight);
 
 			// Update time internally but don't show it
 			float currentTimeSeconds = (Time.GetTicksMsec() - _barStartTime) / 1000.0f;
@@ -133,8 +132,7 @@ public partial class GameScreen : Control
 		// Reset bar properties
 		_barPosition = 0.0f;
 		_barDirection = 1;
-		_currentBar.CustomMinimumSize = new Vector2(_currentBar.CustomMinimumSize.X, 50);
-		_currentBar.Size = new Vector2(_currentBar.Size.X, 50);
+		_currentBar.CustomMinimumSize = new Vector2(30, 50);  // Fixed width of 30, height of 50
 		_currentBar.Modulate = new Color(0.2f, 0.65098f, 0.2f);  // Reset color to green
 
 		// Set up random delay
@@ -168,12 +166,14 @@ public partial class GameScreen : Control
 
 		GD.Print($"Bar {_currentBarIndex + 1} time: {reactionTime}");
 
-		 // Show and update the time label
-        _currentTimeLabel.Text = $"{reactionTime:F3}s";
-        _currentTimeLabel.Show();
+		// Show and update the time label
+		_currentTimeLabel.Text = $"{reactionTime:F3}s";
+		_currentTimeLabel.Show();
 
-		// Highlight result
+		// Preserve the bar's width when highlighting
+		float currentHeight = _currentBar.CustomMinimumSize.Y;
 		_currentBar.Modulate = new Color(1, 1, 0);  // Yellow highlight
+		_currentBar.CustomMinimumSize = new Vector2(30, currentHeight);  // Keep the same width
 
 		// Check if game is complete
 		_currentBarIndex++;
@@ -193,7 +193,12 @@ public partial class GameScreen : Control
 	{
 		_isBarMoving = false;
 		_stopButton.Disabled = true;
+		
+		// Preserve width when showing penalty
+		float currentHeight = _currentBar.CustomMinimumSize.Y;
 		_currentBar.Modulate = new Color(1, 0, 0);  // Red highlight for failure
+		_currentBar.CustomMinimumSize = new Vector2(30, currentHeight);  // Keep the same width
+		
 		_penaltyDialog.DialogText = "PENALTY!\n" + message;
 		_penaltyDialog.PopupCentered();
 	}

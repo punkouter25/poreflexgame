@@ -60,119 +60,130 @@ text = "STOP"
 
 [node name="BarsContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -200.0
-offset_right = 300.0
-offset_bottom = 200.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -350.0
+offset_right = -32.0
+offset_bottom = -120.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 32
+grow_vertical = 0
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Bar1Container" type="VBoxContainer" parent="BarsContainer"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 alignment = 2
 
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar1Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = ""
 horizontal_alignment = 1
 
 [node name="Bar1" type="ColorRect" parent="BarsContainer/Bar1Container"]
-custom_minimum_size = Vector2(80, 50)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
 color = Color(0.2, 0.65098, 0.2, 1)
 
 [node name="Bar2Container" type="VBoxContainer" parent="BarsContainer"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 alignment = 2
 
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar2Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = ""
 horizontal_alignment = 1
 
 [node name="Bar2" type="ColorRect" parent="BarsContainer/Bar2Container"]
-custom_minimum_size = Vector2(80, 50)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
 color = Color(0.2, 0.65098, 0.2, 1)
 
 [node name="Bar3Container" type="VBoxContainer" parent="BarsContainer"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 alignment = 2
 
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar3Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = ""
 horizontal_alignment = 1
 
 [node name="Bar3" type="ColorRect" parent="BarsContainer/Bar3Container"]
-custom_minimum_size = Vector2(80, 50)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
 color = Color(0.2, 0.65098, 0.2, 1)
 
 [node name="Bar4Container" type="VBoxContainer" parent="BarsContainer"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 alignment = 2
 
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar4Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = ""
 horizontal_alignment = 1
 
 [node name="Bar4" type="ColorRect" parent="BarsContainer/Bar4Container"]
-custom_minimum_size = Vector2(80, 50)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
 color = Color(0.2, 0.65098, 0.2, 1)
 
 [node name="Bar5Container" type="VBoxContainer" parent="BarsContainer"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 alignment = 2
 
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar5Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = ""
 horizontal_alignment = 1
 
 [node name="Bar5" type="ColorRect" parent="BarsContainer/Bar5Container"]
-custom_minimum_size = Vector2(80, 50)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
 color = Color(0.2, 0.65098, 0.2, 1)
 
 [node name="Bar6Container" type="VBoxContainer" parent="BarsContainer"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 alignment = 2
 
 [node name="TimeLabel" type="Label" parent="BarsContainer/Bar6Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 18
 text = ""
 horizontal_alignment = 1
 
 [node name="Bar6" type="ColorRect" parent="BarsContainer/Bar6Container"]
-custom_minimum_size = Vector2(80, 50)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
 color = Color(0.2, 0.65098, 0.2, 1)
 

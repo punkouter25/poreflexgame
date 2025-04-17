@@ -4,7 +4,6 @@ using System;
 public partial class SplashScreen : Control
 {
     private const float SPLASH_DURATION = 2.5f;  // seconds
-    private const string NEXT_SCENE_REGISTRATION = "res://scenes/registration/player_registration.tscn";
     private const string NEXT_SCENE_MAIN_MENU = "res://scenes/menu/main_menu.tscn";
 
     private GameManager _gameManager;
@@ -111,19 +110,9 @@ public partial class SplashScreen : Control
             return;
         }
 
-        // Check if player is already registered
-        var nextScene = NEXT_SCENE_REGISTRATION;
-        if (_gameManager != null && !string.IsNullOrEmpty(_gameManager.PlayerData.Initials))
-        {
-            nextScene = NEXT_SCENE_MAIN_MENU;
-            GD.Print("Player already registered, going to main menu");
-        }
-        else
-        {
-            GD.Print("New player, going to registration");
-        }
-
-        _mainNode.ChangeScene(nextScene);
+        // Always go directly to main menu, skip registration
+        _mainNode.ChangeScene(NEXT_SCENE_MAIN_MENU);
+        GD.Print("Going directly to main menu");
     }
 
     private void PrintSceneTree(Node node, int level)
