@@ -58,6 +58,10 @@
             "GodotSharp": {
               "target": "Package",
               "version": "[4.4.1, )"
+            },
+            "GodotSharpEditor": {
+              "target": "Package",
+              "version": "[4.4.1, )"
             }
           },
           "imports": [
@@ -81,10 +85,6 @@
               "version": "[8.0.15, 8.0.15]"
             },
             {
-              "name": "Microsoft.NETCore.App.Runtime.Mono.android-arm64",
-              "version": "[8.0.15, 8.0.15]"
-            },
-            {
               "name": "Microsoft.WindowsDesktop.App.Ref",
               "version": "[8.0.15, 8.0.15]"
             }
@@ -95,11 +95,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "android-arm64": {
-          "#import": []
         }
       }
     }
