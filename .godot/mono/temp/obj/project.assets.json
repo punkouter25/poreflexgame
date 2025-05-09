@@ -20,19 +20,24 @@
             "related": ".xml"
           }
         }
-      },
-      "GodotSharpEditor/4.4.1": {
+      }
+    },
+    "net8.0/android-arm64": {
+      "Godot.SourceGenerators/4.4.1": {
         "type": "package",
-        "dependencies": {
-          "GodotSharp": "4.4.1"
-        },
+        "build": {
+          "build/Godot.SourceGenerators.props": {}
+        }
+      },
+      "GodotSharp/4.4.1": {
+        "type": "package",
         "compile": {
-          "lib/net8.0/GodotSharpEditor.dll": {
+          "lib/net8.0/GodotSharp.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/GodotSharpEditor.dll": {
+          "lib/net8.0/GodotSharp.dll": {
             "related": ".xml"
           }
         }
@@ -65,26 +70,12 @@
         "lib/net8.0/GodotSharp.dll",
         "lib/net8.0/GodotSharp.xml"
       ]
-    },
-    "GodotSharpEditor/4.4.1": {
-      "sha512": "cc3nA24r/sjW8KxrNqfSQk4CQMQYcg/kYk5935R88IhGBdRuTH4miaBXPlzR/td5GR8i1oGtCMWyW8axpQ0DxA==",
-      "type": "package",
-      "path": "godotsharpeditor/4.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "godotsharpeditor.4.4.1.nupkg.sha512",
-        "godotsharpeditor.nuspec",
-        "lib/net8.0/GodotSharpEditor.dll",
-        "lib/net8.0/GodotSharpEditor.xml"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Godot.SourceGenerators >= 4.4.1",
-      "GodotSharp >= 4.4.1",
-      "GodotSharpEditor >= 4.4.1"
+      "GodotSharp >= 4.4.1"
     ]
   },
   "packageFolders": {
@@ -145,10 +136,6 @@
           "GodotSharp": {
             "target": "Package",
             "version": "[4.4.1, )"
-          },
-          "GodotSharpEditor": {
-            "target": "Package",
-            "version": "[4.4.1, )"
           }
         },
         "imports": [
@@ -168,6 +155,11 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "android-arm64": {
+        "#import": []
       }
     }
   }

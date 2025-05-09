@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0clnDW2uiJk=",
+  "dgSpecHash": "WBkujbf4IS0=",
   "success": true,
   "projectFilePath": "C:\\Users\\punko\\Downloads\\poreflexgame\\PoReflexGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\punko\\.nuget\\packages\\godot.sourcegenerators\\4.4.1\\godot.sourcegenerators.4.4.1.nupkg.sha512",
-    "C:\\Users\\punko\\.nuget\\packages\\godotsharp\\4.4.1\\godotsharp.4.4.1.nupkg.sha512",
-    "C:\\Users\\punko\\.nuget\\packages\\godotsharpeditor\\4.4.1\\godotsharpeditor.4.4.1.nupkg.sha512"
+    "C:\\Users\\punko\\.nuget\\packages\\godotsharp\\4.4.1\\godotsharp.4.4.1.nupkg.sha512"
   ],
   "logs": []
 }

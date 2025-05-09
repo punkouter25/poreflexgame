@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PoReflexGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25095f0de86ba27c0a8278b17b3559c3492d462b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea0673a4ec7b768a1ecf226ef497f0a7d7c86a00")]
 [assembly: System.Reflection.AssemblyProductAttribute("PoReflexGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PoReflexGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
