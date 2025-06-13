@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "y1RntbReaiMXmpkyRez5FXKpTt3+uoj3flefIrMwA5w=",
+  "Source": "PoReflexGame.Api",
+  "BasePath": "_content/PoReflexGame.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

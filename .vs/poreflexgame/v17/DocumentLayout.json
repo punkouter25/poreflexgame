@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\punko\\Downloads\\poreflexgame\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C39753EA-66C5-430E-A2C7-5B84A99FFC9C}|PoReflexGame.csproj|c:\\users\\punko\\downloads\\poreflexgame\\highscoreapi\\highscoreapi\\controllers\\highscorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C39753EA-66C5-430E-A2C7-5B84A99FFC9C}|PoReflexGame.csproj|solutionrelative:highscoreapi\\highscoreapi\\controllers\\highscorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C39753EA-66C5-430E-A2C7-5B84A99FFC9C}|PoReflexGame.csproj|c:\\users\\punko\\downloads\\poreflexgame\\highscoreapi\\highscoreapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C39753EA-66C5-430E-A2C7-5B84A99FFC9C}|PoReflexGame.csproj|solutionrelative:highscoreapi\\highscoreapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C39753EA-66C5-430E-A2C7-5B84A99FFC9C}|PoReflexGame.csproj|c:\\users\\punko\\downloads\\poreflexgame\\poreflexgame.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C39753EA-66C5-430E-A2C7-5B84A99FFC9C}|PoReflexGame.csproj|solutionrelative:poreflexgame.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\punko\\Downloads\\poreflexgame\\HighScoreApi\\HighScoreApi\\Program.cs",
+              "RelativeDocumentMoniker": "HighScoreApi\\HighScoreApi\\Program.cs",
+              "ToolTip": "C:\\Users\\punko\\Downloads\\poreflexgame\\HighScoreApi\\HighScoreApi\\Program.cs",
+              "RelativeToolTip": "HighScoreApi\\HighScoreApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T18:30:32.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HighScoresController.cs",
+              "DocumentMoniker": "C:\\Users\\punko\\Downloads\\poreflexgame\\HighScoreApi\\HighScoreApi\\Controllers\\HighScoresController.cs",
+              "RelativeDocumentMoniker": "HighScoreApi\\HighScoreApi\\Controllers\\HighScoresController.cs",
+              "ToolTip": "C:\\Users\\punko\\Downloads\\poreflexgame\\HighScoreApi\\HighScoreApi\\Controllers\\HighScoresController.cs",
+              "RelativeToolTip": "HighScoreApi\\HighScoreApi\\Controllers\\HighScoresController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T18:30:28.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PoReflexGame.csproj",
+              "DocumentMoniker": "C:\\Users\\punko\\Downloads\\poreflexgame\\PoReflexGame.csproj",
+              "RelativeDocumentMoniker": "PoReflexGame.csproj",
+              "ToolTip": "C:\\Users\\punko\\Downloads\\poreflexgame\\PoReflexGame.csproj",
+              "RelativeToolTip": "PoReflexGame.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-04T01:07:51.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

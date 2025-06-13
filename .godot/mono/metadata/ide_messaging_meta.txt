@@ -1,0 +1,2 @@
+﻿49943
+C:/ProgramData/chocolatey/lib/godot-mono/tools/godot_v4.4.1-stable_mono_win64/godot_v4.4.1-stable_mono_win64.exe

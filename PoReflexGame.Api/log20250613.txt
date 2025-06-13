@@ -1,0 +1,621 @@
+2025-06-13 13:06:37.899 -04:00 [INF] Now listening on: http://localhost:5000
+2025-06-13 13:06:37.932 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 13:06:37.933 -04:00 [INF] Hosting environment: Development
+2025-06-13 13:06:37.934 -04:00 [INF] Content root path: C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api
+2025-06-13 13:06:47.990 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-13 13:06:48.007 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-06-13 13:06:48.043 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 53.9432ms
+2025-06-13 13:06:48.056 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/, Response status code: 404
+2025-06-13 13:06:52.837 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2025-06-13 13:06:52.840 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 2.8396ms
+2025-06-13 13:06:52.842 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-06-13 13:06:52.863 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 21.3759ms
+2025-06-13 13:06:52.874 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2025-06-13 13:06:52.877 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2025-06-13 13:06:52.877 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-13 13:06:52.883 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-13 13:06:52.883 -04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-13 13:06:52.885 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 152034 text/css 11.174ms
+2025-06-13 13:06:52.885 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 8.1892ms
+2025-06-13 13:06:52.892 -04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-13 13:06:52.893 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 16.1671ms
+2025-06-13 13:06:53.049 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-06-13 13:06:53.058 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2025-06-13 13:06:53.060 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-13 13:06:53.061 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 2.9233ms
+2025-06-13 13:06:53.101 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.9576ms
+2025-06-13 13:06:58.210 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:06:58.216 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:06:58.225 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:07:12.292 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 14064.1661ms
+2025-06-13 13:07:12.296 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:07:12.298 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.AggregateException: Retry failed after 4 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10002))
+ ---> Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RetryPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipeline.Send(HttpMessage message, CancellationToken cancellationToken)
+   at Azure.Core.HttpPipelineExtensions.ProcessMessage(HttpPipeline pipeline, HttpMessage message, RequestContext requestContext, CancellationToken cancellationToken)
+   at Azure.Data.Tables.TableRestClient.Create(RequestContent content, String format, String responsePreference, RequestContext context)
+   at Azure.Data.Tables.TableClient.CreateIfNotExists(CancellationToken cancellationToken)
+   at PoReflexGame.Api.Services.AzureTableStorageService..ctor(IOptions`1 config) in C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api\Services\AzureTableStorageService.cs:line 21
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ ---> (Inner Exception #1) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #2) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+ ---> (Inner Exception #3) Azure.RequestFailedException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:10002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellation(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.Metrics.MetricsHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageHandlerStage.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.Send(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.Send(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   --- End of inner exception stack trace ---
+   at Azure.Core.Pipeline.HttpClientTransport.ProcessSyncOrAsync(HttpMessage message, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.HttpClientTransport.Process(HttpMessage message)
+   at Azure.Core.Pipeline.HttpPipelineTransportPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RequestActivityPolicy.ProcessNextAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.RequestActivityPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.ResponseBodyPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.LoggingPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelineSynchronousPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+   at Azure.Core.Pipeline.TaskExtensions.EnsureCompleted(ValueTask task)
+   at Azure.Core.Pipeline.RedirectPolicy.Process(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNext(HttpMessage message, ReadOnlyMemory`1 pipeline)
+   at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)<---
+
+2025-06-13 13:07:12.350 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 500 null text/plain; charset=utf-8 14139.8122ms
+2025-06-13 13:07:15.100 -04:00 [INF] Application is shutting down...
+2025-06-13 13:25:42.296 -04:00 [INF] Now listening on: http://localhost:5000
+2025-06-13 13:25:42.329 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 13:25:42.330 -04:00 [INF] Hosting environment: Development
+2025-06-13 13:25:42.330 -04:00 [INF] Content root path: C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api
+2025-06-13 13:27:33.234 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-13 13:27:33.253 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-06-13 13:27:33.260 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 27.2858ms
+2025-06-13 13:27:33.272 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/, Response status code: 404
+2025-06-13 13:27:39.638 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-06-13 13:27:39.662 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 23.8227ms
+2025-06-13 13:27:39.850 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-06-13 13:27:39.905 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.6777ms
+2025-06-13 13:27:44.282 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:27:44.289 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:27:44.301 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:27:44.308 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 4.0735ms
+2025-06-13 13:27:44.309 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:27:44.310 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at Azure.Data.Tables.TableSharedKeyCredential.SetAccountKey(String accountKey)
+   at Azure.Data.Tables.TableSharedKeyCredential..ctor(String accountName, String accountKey)
+   at Azure.Data.Tables.TableConnectionString.GetCredentials(ConnectionString settings)
+   at Azure.Data.Tables.TableConnectionString.ParseInternal(String connectionString, TableConnectionString& accountInformation, String& error)
+   at Azure.Data.Tables.TableConnectionString.Parse(String connectionString)
+   at Azure.Data.Tables.TableServiceClient..ctor(String connectionString, TableClientOptions options)
+   at Azure.Data.Tables.TableServiceClient..ctor(String connectionString)
+   at PoReflexGame.Api.Services.AzureTableStorageService..ctor(IOptions`1 config) in C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api\Services\AzureTableStorageService.cs:line 19
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-13 13:27:44.334 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 500 null text/plain; charset=utf-8 51.9718ms
+2025-06-13 13:30:47.118 -04:00 [INF] Application is shutting down...
+2025-06-13 13:32:07.278 -04:00 [INF] Now listening on: http://localhost:5000
+2025-06-13 13:32:07.310 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 13:32:07.311 -04:00 [INF] Hosting environment: Development
+2025-06-13 13:32:07.311 -04:00 [INF] Content root path: C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api
+2025-06-13 13:32:08.382 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-13 13:32:08.397 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-06-13 13:32:08.400 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 19.0356ms
+2025-06-13 13:32:08.410 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/, Response status code: 404
+2025-06-13 13:32:17.265 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-06-13 13:32:17.291 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 26.1344ms
+2025-06-13 13:32:17.355 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-06-13 13:32:17.404 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.5518ms
+2025-06-13 13:32:21.108 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:32:21.115 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:32:21.125 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:32:21.232 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 104.3999ms
+2025-06-13 13:32:21.233 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:32:21.233 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+Azure.RequestFailedException: Service request failed.
+Status: 403 (Forbidden)
+
+Content:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Error>
+  <Code>AuthorizationFailure</Code>
+  <Message>Server failed to authenticate the request. Make sure the value of the Authorization header is formed correctly including the signature.
+RequestId:e9241cd3-bd17-4c47-8714-cb7822449574
+Time:2025-06-13T17:32:21.214Z</Message>
+</Error>
+
+Headers:
+Server: Azurite-Table/3.34.0
+x-ms-error-code: REDACTED
+x-ms-request-id: e9241cd3-bd17-4c47-8714-cb7822449574
+x-ms-version: REDACTED
+Date: Fri, 13 Jun 2025 17:32:21 GMT
+Connection: keep-alive
+Keep-Alive: REDACTED
+Transfer-Encoding: chunked
+Content-Type: application/xml
+
+   at Azure.Data.Tables.TableClient.CreateIfNotExists(CancellationToken cancellationToken)
+   at PoReflexGame.Api.Services.AzureTableStorageService..ctor(IOptions`1 config) in C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api\Services\AzureTableStorageService.cs:line 21
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-13 13:32:21.257 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 500 null text/plain; charset=utf-8 148.8742ms
+2025-06-13 13:33:37.669 -04:00 [INF] Application is shutting down...
+2025-06-13 13:34:35.437 -04:00 [INF] Now listening on: http://localhost:5000
+2025-06-13 13:34:35.469 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 13:34:35.469 -04:00 [INF] Hosting environment: Development
+2025-06-13 13:34:35.470 -04:00 [INF] Content root path: C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api
+2025-06-13 13:34:38.175 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-06-13 13:34:38.236 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 62.6103ms
+2025-06-13 13:34:39.955 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-06-13 13:34:39.975 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 20.607ms
+2025-06-13 13:34:40.004 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-06-13 13:34:40.009 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.0201ms
+2025-06-13 13:34:44.238 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:34:44.241 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-06-13 13:34:44.243 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:34:44.252 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:34:44.375 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:34:44.383 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 128.4868ms
+2025-06-13 13:34:44.384 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:34:44.384 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 146.4785ms
+2025-06-13 13:35:12.910 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:35:12.912 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:35:12.913 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:35:12.918 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:35:12.919 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 5.7659ms
+2025-06-13 13:35:12.920 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:35:12.921 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 11.2128ms
+2025-06-13 13:35:31.205 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - application/json 79
+2025-06-13 13:35:31.206 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:35:31.211 -04:00 [INF] Route matched with {action = "SubmitHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitHighScore(PoReflexGame.Api.Models.HighScore) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:35:31.222 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-13 13:35:31.233 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api) in 20.8464ms
+2025-06-13 13:35:31.234 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:35:31.235 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - 400 null application/problem+json; charset=utf-8 30.1484ms
+2025-06-13 13:35:33.500 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:35:33.501 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:35:33.502 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:35:33.505 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:35:33.505 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 2.5558ms
+2025-06-13 13:35:33.506 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:35:33.507 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 6.6263ms
+2025-06-13 13:37:10.440 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:37:10.444 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:37:10.445 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:37:10.449 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:37:10.450 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 4.1332ms
+2025-06-13 13:37:10.453 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:37:10.454 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 13.4195ms
+2025-06-13 13:39:20.437 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:39:20.439 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:39:20.439 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:39:20.442 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:39:20.443 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 3.533ms
+2025-06-13 13:39:20.444 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:39:20.444 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 7.3917ms
+2025-06-13 13:39:34.259 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - null null
+2025-06-13 13:39:34.260 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:39:34.261 -04:00 [INF] Route matched with {action = "SubmitHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitHighScore(PoReflexGame.Api.Models.HighScore) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:39:34.265 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-13 13:39:34.267 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api) in 5.1174ms
+2025-06-13 13:39:34.268 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:39:34.268 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - 415 null application/problem+json; charset=utf-8 9.3006ms
+2025-06-13 13:40:27.330 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:40:27.331 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:40:27.332 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:40:27.335 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:40:27.335 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 2.8824ms
+2025-06-13 13:40:27.336 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:40:27.337 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 7.4593ms
+2025-06-13 13:42:35.709 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:42:35.710 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:42:35.711 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:42:35.715 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:42:35.716 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 3.0483ms
+2025-06-13 13:42:35.716 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:42:35.717 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 8.0444ms
+2025-06-13 13:42:39.848 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - application/json 85
+2025-06-13 13:42:39.850 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:42:39.850 -04:00 [INF] Route matched with {action = "SubmitHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitHighScore(PoReflexGame.Api.Models.HighScore) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:42:39.852 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-13 13:42:39.852 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api) in 1.0559ms
+2025-06-13 13:42:39.853 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:42:39.853 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - 400 null application/problem+json; charset=utf-8 4.9104ms
+2025-06-13 13:46:29.654 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:46:29.656 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:46:29.656 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:46:29.660 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:46:29.661 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 3.5553ms
+2025-06-13 13:46:29.662 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:46:29.662 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 8.2406ms
+2025-06-13 13:46:32.849 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - application/json 85
+2025-06-13 13:46:32.851 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:46:32.851 -04:00 [INF] Route matched with {action = "SubmitHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitHighScore(PoReflexGame.Api.Models.HighScore) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:46:32.853 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-13 13:46:32.854 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api) in 1.3649ms
+2025-06-13 13:46:32.855 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:46:32.855 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - 400 null application/problem+json; charset=utf-8 6.5691ms
+2025-06-13 13:46:48.170 -04:00 [INF] Application is shutting down...
+2025-06-13 13:47:47.558 -04:00 [INF] Now listening on: http://localhost:5000
+2025-06-13 13:47:47.590 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 13:47:47.590 -04:00 [INF] Hosting environment: Development
+2025-06-13 13:47:47.591 -04:00 [INF] Content root path: C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api
+2025-06-13 13:47:50.819 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:47:50.834 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-06-13 13:47:50.836 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:47:50.844 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:47:51.084 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:47:51.092 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 245.0455ms
+2025-06-13 13:47:51.097 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:47:51.098 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 279.6969ms
+2025-06-13 13:47:53.942 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - application/json 85
+2025-06-13 13:47:53.945 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:47:53.947 -04:00 [INF] Route matched with {action = "SubmitHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitHighScore(PoReflexGame.Api.Models.HighScore) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:47:53.966 -04:00 [INF] Executing CreatedAtActionResult, writing value of type 'PoReflexGame.Api.Models.HighScore'.
+2025-06-13 13:47:53.973 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api) in 24.0555ms
+2025-06-13 13:47:53.974 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:47:53.975 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-13 13:47:53.986 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - 500 null text/plain; charset=utf-8 43.5782ms
+2025-06-13 13:49:08.811 -04:00 [INF] Application is shutting down...
+2025-06-13 13:49:11.944 -04:00 [INF] Now listening on: http://localhost:5000
+2025-06-13 13:49:11.976 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 13:49:11.977 -04:00 [INF] Hosting environment: Development
+2025-06-13 13:49:11.978 -04:00 [INF] Content root path: C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api
+2025-06-13 13:49:15.017 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 13:49:15.033 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-06-13 13:49:15.035 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:49:15.045 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:49:15.119 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 13:49:15.128 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 79.31ms
+2025-06-13 13:49:15.133 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 13:49:15.134 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 118.364ms
+2025-06-13 13:49:17.140 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - application/json 85
+2025-06-13 13:49:17.143 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:49:17.147 -04:00 [INF] Route matched with {action = "SubmitHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitHighScore(PoReflexGame.Api.Models.HighScore) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 13:49:17.166 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-13 13:49:17.166 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api) in 18.9246ms
+2025-06-13 13:49:17.167 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 13:49:17.168 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - 200 0 null 28.3572ms
+2025-06-13 14:22:25.649 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - application/json 79
+2025-06-13 14:22:25.653 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 14:22:25.654 -04:00 [INF] Route matched with {action = "SubmitHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitHighScore(PoReflexGame.Api.Models.HighScore) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:22:25.667 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-13 14:22:25.668 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api) in 10.7739ms
+2025-06-13 14:22:25.669 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 14:22:25.670 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - 200 0 null 21.5276ms
+2025-06-13 14:22:42.968 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 14:22:42.969 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:22:42.970 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:22:42.974 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 14:22:42.976 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 5.186ms
+2025-06-13 14:22:42.978 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:22:42.980 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 12.0724ms
+2025-06-13 14:23:03.284 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 14:23:03.286 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:23:03.288 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:23:03.293 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 14:23:03.295 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 4.3079ms
+2025-06-13 14:23:03.296 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:23:03.297 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 12.7753ms
+2025-06-13 14:24:42.888 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 14:24:42.890 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:24:42.893 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:24:42.896 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 14:24:42.898 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 3.7347ms
+2025-06-13 14:24:42.898 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:24:42.899 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 10.7342ms
+2025-06-13 14:26:36.679 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 14:26:36.681 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:26:36.681 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:26:36.684 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 14:26:36.685 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 3.1212ms
+2025-06-13 14:26:36.686 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:26:36.687 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 7.4536ms
+2025-06-13 14:29:29.754 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 14:29:29.758 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:29:29.759 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:29:29.764 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 14:29:29.765 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 3.9754ms
+2025-06-13 14:29:29.766 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:29:29.766 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 12.6502ms
+2025-06-13 14:29:42.508 -04:00 [INF] Application is shutting down...
+2025-06-13 14:29:45.405 -04:00 [INF] Now listening on: http://localhost:5000
+2025-06-13 14:29:45.439 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 14:29:45.440 -04:00 [INF] Hosting environment: Development
+2025-06-13 14:29:45.441 -04:00 [INF] Content root path: C:\Users\punko\Downloads\poreflexgame\PoReflexGame.Api
+2025-06-13 14:29:47.927 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-06-13 14:29:47.962 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 35.3072ms
+2025-06-13 14:29:48.039 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-06-13 14:29:48.084 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.4828ms
+2025-06-13 14:29:54.427 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 14:29:54.431 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-06-13 14:29:54.433 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:29:54.442 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:29:54.502 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 14:29:54.510 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 65.9477ms
+2025-06-13 14:29:54.511 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:29:54.512 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 85.1447ms
+2025-06-13 14:30:26.875 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - application/json 73
+2025-06-13 14:30:26.876 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 14:30:26.879 -04:00 [INF] Route matched with {action = "SubmitHighScore", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitHighScore(PoReflexGame.Api.Models.HighScore) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:30:26.898 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-13 14:30:26.900 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api) in 20.1838ms
+2025-06-13 14:30:26.902 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.SubmitHighScore (PoReflexGame.Api)'
+2025-06-13 14:30:26.904 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/HighScores/submit - 200 0 null 29.0919ms
+2025-06-13 14:30:41.133 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 14:30:41.135 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:30:41.136 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:30:41.142 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 14:30:41.143 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 4.4434ms
+2025-06-13 14:30:41.144 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:30:41.144 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 11.8109ms
+2025-06-13 14:30:46.207 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - null null
+2025-06-13 14:30:46.211 -04:00 [INF] Executing endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:30:46.213 -04:00 [INF] Route matched with {action = "GetTopHighScores", controller = "HighScores"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PoReflexGame.Api.Models.HighScore]]] GetTopHighScores(Int32) on controller PoReflexGame.Api.Controllers.HighScoresController (PoReflexGame.Api).
+2025-06-13 14:30:46.219 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PoReflexGame.Api.Models.HighScore, PoReflexGame.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-13 14:30:46.220 -04:00 [INF] Executed action PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api) in 5.2025ms
+2025-06-13 14:30:46.221 -04:00 [INF] Executed endpoint 'PoReflexGame.Api.Controllers.HighScoresController.GetTopHighScores (PoReflexGame.Api)'
+2025-06-13 14:30:46.221 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/HighScores/top/10 - 200 null application/json; charset=utf-8 14.3711ms

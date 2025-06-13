@@ -1,0 +1,137 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8p4q2yjmx3k7"]
+
+[ext_resource type="Script" uid="uid://c1wyyanjd6hhe" path="res://scenes/game/GameOverScreen.cs" id="1_h4k2v"]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h4k2v")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="ScoreContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="AverageScore" type="Label" parent="CenterContainer/VBoxContainer/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Average: 0.000s"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/ScoreContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="TimesGrid" type="GridContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="Bar1Label" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "Bar 1:"
+horizontal_alignment = 2
+
+[node name="Bar1Time" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "0.000s"
+
+[node name="Bar2Label" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "Bar 2:"
+horizontal_alignment = 2
+
+[node name="Bar2Time" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "0.000s"
+
+[node name="Bar3Label" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "Bar 3:"
+horizontal_alignment = 2
+
+[node name="Bar3Time" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "0.000s"
+
+[node name="Bar4Label" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "Bar 4:"
+horizontal_alignment = 2
+
+[node name="Bar4Time" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "0.000s"
+
+[node name="Bar5Label" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "Bar 5:"
+horizontal_alignment = 2
+
+[node name="Bar5Time" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "0.000s"
+
+[node name="Bar6Label" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "Bar 6:"
+horizontal_alignment = 2
+
+[node name="Bar6Time" type="Label" parent="CenterContainer/VBoxContainer/TimesGrid"]
+layout_mode = 2
+text = "0.000s"
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="CenterContainer/VBoxContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+text = "Try Again"
+
+[node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+text = "Main Menu"
