@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Text; // For Encoding.UTF8
 
 public partial class DiagnosticManager : Control
 {
@@ -9,8 +10,8 @@ public partial class DiagnosticManager : Control
 	private Button _testButton;
 	private Godot.Timer _testTimer;
 	private bool _isTesting = false;
-	private AzureTableStorage _azureStorage;
-	private TaskCompletionSource<bool> _azureTestCompletion;
+	
+	[Export] private string ApiBaseUrl { get; set; } = "http://localhost:5000/api/highscores"; // Placeholder API URL
 	
 	private const float TEST_INTERVAL = 5.0f; // Test every 5 seconds
 	
@@ -23,24 +24,6 @@ public partial class DiagnosticManager : Control
 			_testButton = GetNode<Button>("SafeArea/Panel/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/TestButton");
 			_testTimer = GetNode<Godot.Timer>("TestTimer");
 			
-			// Get AzureTableStorage node
-			var azureNode = GetNodeOrNull("AzureTableStorage");
-			if (azureNode == null)
-			{
-				GD.PrintErr("AzureTableStorage node not found!");
-				UpdateStatus("Error: Azure Storage not found");
-				return;
-			}
-			
-			// Try to cast to AzureTableStorage
-			_azureStorage = azureNode as AzureTableStorage;
-			if (_azureStorage == null)
-			{
-				GD.PrintErr("AzureTableStorage node found but script is not attached!");
-				UpdateStatus("Error: Azure Storage script not attached");
-				return;
-			}
-			
 			// Verify UI nodes
 			if (_statusLabel == null || _testButton == null || _testTimer == null)
 			{
@@ -51,23 +34,15 @@ public partial class DiagnosticManager : Control
 			// Connect signals
 			_testButton.Pressed += OnTestButtonPressed;
 			_testTimer.Timeout += OnTestTimerTimeout;
-			_azureStorage.RequestSuccess += OnAzureRequestSuccess;
-			_azureStorage.RequestFailed += OnAzureRequestFailed;
 
-			// Connect to the TablesCreated signal
-			_azureStorage.TablesCreated += OnTablesCreated;
+			// Initial layout update
+			UpdateLayout();
 		}
 		catch (Exception e)
 		{
 			GD.PrintErr($"Error in _Ready: {e.Message}\n{e.StackTrace}");
 			UpdateStatus("Error initializing diagnostics");
 		}
-	}
-
-	private void OnTablesCreated()
-	{
-		GD.Print("Azure tables created, running diagnostics.");
-		RunDiagnostics();
 	}
 	
 	public override void _ExitTree()
@@ -78,13 +53,6 @@ public partial class DiagnosticManager : Control
 		
 		if (_testTimer != null)
 			_testTimer.Timeout -= OnTestTimerTimeout;
-		
-		if (_azureStorage != null)
-		{
-			_azureStorage.RequestSuccess -= OnAzureRequestSuccess;
-			_azureStorage.RequestFailed -= OnAzureRequestFailed;
-			_azureStorage.TablesCreated -= OnTablesCreated;
-		}
 	}
 	
 	public override void _Notification(int what)
@@ -131,18 +99,6 @@ public partial class DiagnosticManager : Control
 		}
 	}
 	
-	private void OnAzureRequestSuccess(string response)
-	{
-		GD.Print("Azure request successful");
-		_azureTestCompletion?.TrySetResult(true);
-	}
-	
-	private void OnAzureRequestFailed(int statusCode, string error)
-	{
-		GD.PrintErr($"Azure request failed: {statusCode} - {error}");
-		_azureTestCompletion?.TrySetResult(false);
-	}
-	
 	private async void RunDiagnostics()
 	{
 		try
@@ -153,15 +109,15 @@ public partial class DiagnosticManager : Control
 			
 			var results = new List<string>();
 			
-			// Test Azure Storage Connection
-			var azureResult = await TestAzureConnection();
-			results.Add($"Azure Storage: {azureResult}");
+			// Test API Connection (replaces TestAzureConnection)
+			var apiResult = await TestApiConnection();
+			results.Add($"API Connection: {apiResult}");
 			
 			// Test Internet Connection
 			var internetResult = await TestInternetConnection();
 			results.Add($"Internet: {internetResult}");
 			
-			// Test Database Connection
+			// Test Database Connection (placeholder)
 			var dbResult = await TestDatabaseConnection();
 			results.Add($"Database: {dbResult}");
 			
@@ -180,38 +136,55 @@ public partial class DiagnosticManager : Control
 		}
 	}
 	
-	private async Task<string> TestAzureConnection()
+	private async Task<string> TestApiConnection()
 	{
+		HttpRequest httpRequest = null;
 		try
 		{
-			if (_azureStorage == null)
+			if (string.IsNullOrEmpty(ApiBaseUrl))
 			{
-				return "❌ Not found";
+				return "❌ API URL not set";
 			}
+
+			httpRequest = new HttpRequest();
+			AddChild(httpRequest);
 			
-			_azureTestCompletion = new TaskCompletionSource<bool>();
+			var tcs = new TaskCompletionSource<bool>();
 			
-			// Try to get a single high score to test connection
-			_azureStorage.GetHighScores(1);
+			httpRequest.RequestCompleted += (result, code, headers, body) =>
+			{
+				// Consider any 2xx status code as success for API connectivity
+				tcs.TrySetResult(code >= 200 && code < 300);
+			};
+			
+			var error = httpRequest.Request(ApiBaseUrl); // Make a GET request to the high scores API
+			
+			if (error != Error.Ok)
+			{
+				return "❌ Failed to send API request";
+			}
 			
 			// Wait for response or timeout
 			var timeout = Task.Delay(5000); // 5 second timeout
-			var completedTask = await Task.WhenAny(_azureTestCompletion.Task, timeout);
+			var completedTask = await Task.WhenAny(tcs.Task, timeout);
 			
 			if (completedTask == timeout)
 			{
-				return "❌ Timeout";
+				return "❌ API Timeout";
 			}
 			
-			return await _azureTestCompletion.Task ? "✅ Connected" : "❌ Failed";
+			return await tcs.Task ? "✅ API Connected" : "❌ API Failed";
 		}
 		catch (Exception e)
 		{
-			return $"❌ Error: {e.Message}";
+			return $"❌ API Error: {e.Message}";
 		}
 		finally
 		{
-			_azureTestCompletion = null;
+			if (httpRequest != null)
+			{
+				httpRequest.QueueFree();
+			}
 		}
 	}
 	
@@ -262,17 +235,18 @@ public partial class DiagnosticManager : Control
 		}
 	}
 	
-	private async Task<string> TestDatabaseConnection()
+	private Task<string> TestDatabaseConnection()
 	{
 		try
 		{
 			// This is a placeholder for actual database testing
-			// You would implement your specific database connection test here
-			return "✅ Connected";
+			// In a real scenario, this would involve making a request to the API
+			// that in turn tests its connection to the database.
+			return Task.FromResult("✅ Connected (Placeholder)");
 		}
 		catch (Exception e)
 		{
-			return $"❌ Error: {e.Message}";
+			return Task.FromResult($"❌ Error: {e.Message}");
 		}
 	}
 	

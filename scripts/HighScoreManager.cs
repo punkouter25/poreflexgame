@@ -2,8 +2,8 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Text; // For Encoding.UTF8
 
-// Separate class for high score data
 public class HighScoreData
 {
     public string PlayerName { get; set; }
@@ -14,35 +14,29 @@ public class HighScoreData
 public partial class HighScoreManager : Node
 {
     [Export] private string PlayerName { get; set; } = "Player";
-    
-    private AzureTableStorage _azureStorage;
+    [Export] private string ApiBaseUrl { get; set; } = "http://localhost:5000/api/highscores"; // Placeholder API URL
+
+    private HttpRequest _httpRequest;
     private Label _highScoreLabel;
     private const int MaxDisplayedScores = 10;
-    
+
     public override void _Ready()
     {
         try
         {
-            _azureStorage = GetNode<AzureTableStorage>("../AzureTableStorage");
+            _httpRequest = new HttpRequest();
+            AddChild(_httpRequest); // Add HttpRequest as a child of this node
+
             _highScoreLabel = GetNode<Label>("../UI/HighScoreLabel");
-            
-            if (_azureStorage == null)
-            {
-                GD.PrintErr("AzureTableStorage node not found!");
-                return;
-            }
-            
+
             if (_highScoreLabel == null)
             {
                 GD.PrintErr("HighScoreLabel not found!");
                 return;
             }
-            
-            // Connect to the signals
-            _azureStorage.RequestSuccess += OnRequestSuccess;
-            _azureStorage.RequestFailed += OnRequestFailed;
-            
-            // Load high scores when the game starts
+
+            _httpRequest.RequestCompleted += OnHttpRequestCompleted;
+
             RefreshHighScores();
         }
         catch (Exception e)
@@ -50,29 +44,52 @@ public partial class HighScoreManager : Node
             GD.PrintErr($"Error initializing HighScoreManager: {e.Message}");
         }
     }
-    
+
     public void SubmitScore(int score)
     {
-        if (_azureStorage == null)
+        if (string.IsNullOrEmpty(ApiBaseUrl))
         {
-            GD.PrintErr("Cannot submit score: AzureTableStorage not initialized");
+            GD.PrintErr("API Base URL is not set!");
             return;
         }
-        
-        _azureStorage.SubmitHighScore(PlayerName, score);
+
+        var highScore = new HighScoreData { PlayerName = PlayerName, Score = score, Timestamp = DateTime.UtcNow };
+        var json = JsonSerializer.Serialize(highScore);
+        var headers = new string[] { "Content-Type: application/json" };
+
+        GD.Print($"Submitting score: {json}");
+        _httpRequest.Request(ApiBaseUrl, headers, HttpClient.Method.Post, json);
     }
-    
+
     public void RefreshHighScores()
     {
-        if (_azureStorage == null)
+        if (string.IsNullOrEmpty(ApiBaseUrl))
         {
-            GD.PrintErr("Cannot refresh scores: AzureTableStorage not initialized");
+            GD.PrintErr("API Base URL is not set!");
             return;
         }
-        
-        _azureStorage.GetHighScores(MaxDisplayedScores);
+
+        GD.Print("Refreshing high scores...");
+        _httpRequest.Request($"{ApiBaseUrl}?top={MaxDisplayedScores}");
     }
-    
+
+    private void OnHttpRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
+    {
+        var responseBody = Encoding.UTF8.GetString(body);
+        GD.Print($"HTTP Request Completed. Result: {result}, Response Code: {responseCode}, Body: {responseBody}");
+
+        if (responseCode >= 200 && responseCode < 300)
+        {
+            // Success
+            OnRequestSuccess(responseBody);
+        }
+        else
+        {
+            // Failure
+            OnRequestFailed((int)responseCode, responseBody);
+        }
+    }
+
     private void OnRequestSuccess(string response)
     {
         try
@@ -83,11 +100,13 @@ public partial class HighScoreManager : Node
                 return;
             }
 
-            if (response.Contains("value"))
+            // Check if the response is a list of high scores (GET request) or a confirmation (POST request)
+            // A simple way to differentiate is to check for the "value" property which is typical for OData/JSON arrays
+            if (response.Contains("\"value\"")) // Assuming the GET response wraps the array in a "value" property
             {
                 var jsonDoc = JsonDocument.Parse(response);
                 var scoreList = new List<HighScoreData>();
-                
+
                 foreach (var element in jsonDoc.RootElement.GetProperty("value").EnumerateArray())
                 {
                     try
@@ -105,13 +124,13 @@ public partial class HighScoreManager : Node
                         GD.PrintErr($"Error parsing high score entry: {e.Message}");
                     }
                 }
-                
+
                 DisplayHighScores(scoreList);
             }
             else
             {
                 GD.Print("Score submitted successfully!");
-                RefreshHighScores();
+                RefreshHighScores(); // Refresh scores after successful submission
             }
         }
         catch (Exception e)
@@ -120,13 +139,13 @@ public partial class HighScoreManager : Node
             DisplayError("Failed to load high scores");
         }
     }
-    
+
     private void OnRequestFailed(int statusCode, string error)
     {
         GD.PrintErr($"Request failed with status {statusCode}: {error}");
-        DisplayError("Failed to connect to server");
+        DisplayError($"Failed to connect to server (Status: {statusCode})");
     }
-    
+
     private void DisplayHighScores(List<HighScoreData> scores)
     {
         if (_highScoreLabel == null)
@@ -142,15 +161,15 @@ public partial class HighScoreManager : Node
         }
 
         var scoreText = new System.Text.StringBuilder("HIGH SCORES\n\n");
-        
+
         for (int i = 0; i < scores.Count; i++)
         {
             scoreText.AppendLine($"{i+1}. {scores[i].PlayerName}: {scores[i].Score}");
         }
-        
+
         _highScoreLabel.Text = scoreText.ToString();
     }
-    
+
     private void DisplayError(string message)
     {
         if (_highScoreLabel != null)
