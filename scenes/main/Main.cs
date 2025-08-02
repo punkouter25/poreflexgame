@@ -19,6 +19,14 @@ public partial class Main : Node
 			? GetNode("CurrentScene").GetChild(0) 
 			: null;
 		GD.Print($"Current scene: {(_currentScene != null ? _currentScene.Name : "None")}");
+		
+		// Load the main menu scene as the initial scene
+		if (_currentScene == null)
+		{
+			GD.Print("No current scene, loading main menu...");
+			ChangeScene("res://scenes/menu/main_menu.tscn");
+		}
+		
 		GD.Print("Main scene initialized");
 	}
 

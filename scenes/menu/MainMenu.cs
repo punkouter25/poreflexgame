@@ -19,19 +19,13 @@ public partial class MainMenu : Control
 	{
 		GD.Print("Main menu initialized");
 
-		// Get the Main node from the root
-		var root = GetTree().Root;
-		foreach (var child in root.GetChildren())
+		// Get the Main node - it should be the root of the main scene
+		_mainNode = GetNode<Main>("/root/Main");
+		if (_mainNode != null)
 		{
-			if (child is Main mainNode)
-			{
-				_mainNode = mainNode;
-				GD.Print("Found Main node in root children");
-				break;
-			}
+			GD.Print("Found Main node successfully");
 		}
-
-		if (_mainNode == null)
+		else
 		{
 			GD.PushWarning("Could not find Main node during initialization");
 			PrintSceneTree(GetTree().Root, 0);  // Print scene tree for debugging

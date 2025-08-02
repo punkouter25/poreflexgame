@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgmwd6hryk8tl"]
+[gd_scene load_steps=4 format=3 uid="uid://cgmwd6hryk8tl"]
 
 [ext_resource type="Script" uid="uid://bme0pm37h21bv" path="res://scripts/DiagnosticManager.cs" id="1_2k4m3"]
-[ext_resource type="Script" uid="uid://bqht777kfumep" path="res://AzureTableStorage.cs" id="2_3k4m3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
@@ -32,11 +31,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2k4m3")
-
-[node name="AzureTableStorage" type="Node" parent="."]
-script = ExtResource("2_3k4m3")
-
-[node name="HTTPRequest" type="HTTPRequest" parent="AzureTableStorage"]
 
 [node name="SafeArea" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(400, 300)
