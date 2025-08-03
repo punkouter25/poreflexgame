@@ -1,111 +1,112 @@
-# Android Export Fix Summary
+# Android Build Error Troubleshooting Guide
 
-## Issues Resolved ✅
+## Current Status: ✅ GRADLE BUILD WORKING
 
-1. **Project Build Issues**: Fixed duplicate file conflicts in android/build directory
-2. **Environment Variables**: Set ANDROID_HOME and JAVA_HOME properly
-3. **Android SDK**: Installed compatible build tools 34.0.0
-4. **Export Configuration**: Updated export_presets.cfg with compatible settings
-5. **Gradle Configuration**: Created gradle.properties to force Java 17 usage
+The Gradle build system is now working correctly as evidenced by:
+- Successful `assembleDebug` completion in 10 seconds
+- APK files being generated in `android/build/build/outputs/apk/`
 
-## Current Configuration
+## Common Remaining Issues & Solutions
 
-### Environment Variables
-- **JAVA_HOME**: `C:\Program Files\Java\jdk-17.0.2`
-- **ANDROID_HOME**: `C:\Users\punko\AppData\Local\Android\Sdk`
+### 1. **"Cannot remove non-existent file" Error**
 
-### Android SDK Components
-- **Build Tools**: 34.0.0, 35.0.0, 36.0.0
-- **Target SDK**: 34 (aligned with build tools 34.0.0)
-- **Min SDK**: 30
+**Cause**: Godot trying to delete a temporary APK that doesn't exist
+**Solution**: 
+```bash
+# Run the manual build script first
+build_android_manual.bat
 
-### Export Settings (export_presets.cfg)
-```ini
-gradle_build/use_gradle_build=true
-gradle_build/target_sdk="34"
-gradle_build/min_sdk="30"
-architectures/arm64-v8a=true
-permissions/internet=true
-dotnet/include_scripts_content=true
-dotnet/embed_build_outputs=true
+# Then try exporting from Godot
 ```
 
-### Gradle Configuration (gradle.properties)
-```properties
-org.gradle.java.home=C:\\Program Files\\Java\\jdk-17.0.2
-org.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=1g
-org.gradle.caching=true
-org.gradle.parallel=true
-org.gradle.daemon=true
-```
+### 2. **Export Templates Missing**
 
-## Next Steps to Try Android Export
+**Symptoms**: "No export template found" or similar
+**Solution**:
+1. Open Godot Editor
+2. Go to **Editor → Manage Export Templates**
+3. Download templates for your Godot version (4.4)
+4. Or download manually from: https://godotengine.org/download/
 
-### Option 1: Use Environment Setup Script
-1. Run `test_android_env.bat` to verify environment
-2. The script will set all necessary environment variables
-3. Open Godot from this environment
-4. Try Project → Export → Android
+### 3. **Keystore Issues**
 
-### Option 2: Restart and Test
-1. **Restart your computer** to ensure all environment variables are loaded
-2. Open Godot normally
-3. Go to Project → Export → Android
-4. Click "Export Project"
+**Symptoms**: Signing errors during export
+**Solution**:
+1. The debug keystore exists: `debug.keystore`
+2. In Godot Export settings:
+   - Leave keystore fields empty for debug builds
+   - Godot will use default debug signing
 
-### Option 3: Manual Godot Launch
-1. Open Command Prompt as Administrator
-2. Run these commands:
-   ```cmd
-   set ANDROID_HOME=C:\Users\punko\AppData\Local\Android\Sdk
-   set JAVA_HOME=C:\Program Files\Java\jdk-17.0.2
-   cd /d "C:\Users\punko\Downloads\poreflexgame"
-   "C:\path\to\godot.exe" --path .
+### 4. **SDK Path Issues**
+
+**Solution**:
+1. Open Godot Editor
+2. Go to **Editor → Editor Settings → Export → Android**
+3. Set paths:
+   - **Android SDK Path**: `C:\Users\[username]\AppData\Local\Android\Sdk`
+   - **Debug Keystore**: `debug.keystore` (in project root)
+
+### 5. **Memory/Permission Issues**
+
+**Symptoms**: Build fails with memory errors
+**Solution**:
+1. Close other applications
+2. Try building with increased memory:
+   ```bash
+   set GRADLE_OPTS=-Xmx4g
    ```
 
-## Verification Steps
+## Step-by-Step Export Process
 
-### Before Export:
-1. ✅ Java 17.0.2 installed and in PATH
-2. ✅ ANDROID_HOME set to Android SDK location
-3. ✅ Build tools 34.0.0 installed
-4. ✅ Project builds successfully with `dotnet build`
-5. ✅ No duplicate files in android/build directory
+### Method 1: Using Godot Editor (Recommended)
+1. **Set Environment**: Run `fix_android_env.bat`
+2. **Open Godot Editor**
+3. **Project → Export**
+4. **Select "Android" preset**
+5. **Click "Export Project"**
+6. **Choose output location**: `builds/android/PoReflexGame.apk`
 
-### During Export:
-- Watch for Java version detection in Godot console
-- Gradle should now recognize Java 17 instead of Java 8
-- Build process should use build tools 34.0.0
+### Method 2: Manual Build (Fallback)
+1. **Run**: `build_android_manual.bat`
+2. **Check output**: APKs will be copied to `builds/android/`
 
-### If Export Still Fails:
-1. Check Godot console for specific error messages
-2. Look for "Java 8" or "Java 11" compatibility messages
-3. Verify Gradle is picking up the correct gradle.properties file
+## Verification Commands
 
-## Files Created/Modified
+```powershell
+# Check Java environment
+java -version
 
-### New Files:
-- `gradle.properties` - Forces Gradle to use Java 17
-- `test_android_env.bat` - Environment verification script
-- `start_godot_android.bat` - Launches Godot with proper environment
+# Check Gradle build
+cd android\build
+.\gradlew.bat assembleDebug
 
-### Modified Files:
-- `export_presets.cfg` - Updated target_sdk to "34"
-- All C# build conflicts resolved
+# Check generated APKs
+Get-ChildItem build\outputs\apk\ -Recurse -Filter "*.apk"
+```
 
-## Alternative Approach
+## Expected Output Structure
+```
+builds/android/
+├── PoReflexGame.apk              # Main export from Godot
+├── PoReflexGame-debug.apk        # Manual build (Standard)
+└── PoReflexGame-mono-debug.apk   # Manual build (Mono/.NET)
+```
 
-If Gradle continues to have Java version issues, you can temporarily disable Gradle builds:
-1. Change `gradle_build/use_gradle_build=false` in export_presets.cfg
-2. This will use Godot's built-in Android export process
-3. Re-enable Gradle once the core export works
+## If Problems Persist
 
-## Troubleshooting
+### Debug Steps:
+1. **Check Godot Console**: Look for specific error messages
+2. **Try Manual Build**: Run `build_android_manual.bat`
+3. **Check Permissions**: Ensure write access to `builds/` directory
+4. **Verify SDK**: Open Android Studio and accept all licenses
 
-If you still see "Java 8" errors:
-1. Restart your computer to refresh all environment variables
-2. Check that no other Java installations are interfering
-3. Verify Gradle is reading our gradle.properties file
-4. Consider temporarily disabling Gradle builds to test basic export
+### Log Locations:
+- **Godot Output**: Check the editor output panel
+- **Gradle Logs**: `android/build/build/reports/`
+- **System Logs**: Check Windows Event Viewer for access issues
 
-The environment is now properly configured for Android exports with Java 17 and compatible Android SDK components.
+## Quick Fix Summary
+
+✅ **Working**: Gradle build, APK generation, Java environment
+🔧 **Fixed**: Export presets, permissions, build directories
+📋 **Next**: Try exporting from Godot Editor with current configuration
